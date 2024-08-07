@@ -1,0 +1,15 @@
+
+entry converterXmlParaStruct
+	params
+		string vLista, vItems, vStruct
+	endparams
+	
+	putitem/id vItems, "NAMESPACE", "http://www.teste.com" ;preechendo lista com valores
+	putitem/id vItems, "LOCATION", "teste.xsd"
+	
+	putitem vLista, -1, vItems                             ;encadeando lista
+	
+	xmlToStruct vStruct, "arquivo.xml", vLista             ;convertendo um xml para uma struct
+	
+	return(0)
+end
